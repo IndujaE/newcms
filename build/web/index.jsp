@@ -254,6 +254,11 @@ function content4()
 	//alert("reached title2");
 	window.location.assign("titleeditor/page5/content4.jsp");
 }
+function contentimage1()
+{
+	//alert("reached title2");
+	window.location.assign("titleeditor/page1/image1.html");
+}
 </script>
 
 
@@ -298,7 +303,7 @@ function content4()
 <a href="login.html"><img src="images/login-button.png"></a>
 						<h2 onClick="title1()" style="color:<%= color%>"> <font face="<%=font%>">
     <%= text%></h2></font>
-						<p><img src="images/logo.png"></p>
+						<p onClick="contentimage1()"><img src="photos/homeimage.jpg"></p>
 					</section>
 					
 					<section class="st-panel st-color" id="st-panel-2">
