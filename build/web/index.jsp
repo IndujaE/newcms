@@ -7,47 +7,52 @@
 //String sql1 = "SELECT * FROM `TITLE` WHERE `PAGE`=2  ";
 PreparedStatement ps = null;
 PreparedStatement ps1 = null;
-String pageno;
+String pageno = null;
 String color = null;
 String text = null;
 String font = null;
-String pageno1;
+String pageno1 = null;
 String color1 = null;
 String text1 = null;
 String font1 = null;
-String pageno2;
+String pageno2 = null;
 String color2 = null;
 String text2 = null;
 String font2 = null;
-String pageno3;
+String pageno3 = null;
 String color3 = null;
 String text3 = null;
 String font3 = null;
-String pageno4;
+String pageno4 = null;
 String color4 = null;
 String text4 = null;
 String font4 = null;
-String pageno5;
+String pageno5 = null;
 String color5 = null;
 String text5 = null;
 String font5 = null;
-String pageno6;
+String pageno6 = null;
 String color6 = null;
 String text6 = null;
 String font6 = null;
-String pageno7;
+String pageno7 = null;
 String color7 = null;
 String text7 = null;
 String font7 = null;
-String pageno8;
+String pageno8 = null;
 String color8 = null;
 String text8 = null;
 String font8 = null;
+ResultSet rs1;
+ResultSet rs2;
+ResultSet rs3;
+ResultSet rs4;
+ResultSet rs5;
 
 //ResultSet rs= null;
  ps=con.prepareStatement("SELECT * FROM TITLE WHERE PAGE='1' ");
              
-             ResultSet rs1=ps.executeQuery();
+             rs1=ps.executeQuery();
              while(rs1.next())
              {
              pageno = rs1.getString(1).toString();
@@ -64,7 +69,7 @@ String font8 = null;
              
  ps1=con.prepareStatement("SELECT * FROM TITLE WHERE PAGE='2' ");
              
-             ResultSet rs2 =ps1.executeQuery();
+             rs2 =ps1.executeQuery();
              while(rs2.next())
              {
              pageno1 = rs2.getString(1).toString();
@@ -80,7 +85,7 @@ String font8 = null;
              
  ps1=con.prepareStatement("SELECT * FROM TITLE WHERE PAGE='3' ");
              
-             ResultSet rs3 = ps1.executeQuery();
+             rs3 = ps1.executeQuery();
              while(rs3.next())
              {
              pageno2 = rs3.getString(1).toString();
@@ -96,7 +101,7 @@ String font8 = null;
              
 ps1=con.prepareStatement("SELECT * FROM TITLE WHERE PAGE='4' ");
              
-             ResultSet rs4 = ps1.executeQuery();
+             rs4 = ps1.executeQuery();
              while(rs4.next())
              {
              pageno3 = rs4.getString(1).toString();
@@ -112,7 +117,7 @@ ps1=con.prepareStatement("SELECT * FROM TITLE WHERE PAGE='4' ");
              
 ps1=con.prepareStatement("SELECT * FROM TITLE WHERE PAGE='5' ");
              
-             ResultSet rs5 = ps1.executeQuery();
+             rs5 = ps1.executeQuery();
              while(rs5.next())
              {
              pageno4 = rs5.getString(1).toString();
@@ -274,15 +279,15 @@ function content4()
 			<div class="st-container">
 			
 				<input type="radio" name="radio-set" checked="checked" id="st-control-1"/>
-				<a href="#st-panel-1">Home</a>
+				<a href="#st-panel-1">  <%=text%> </a>
 				<input type="radio" name="radio-set" id="st-control-2"/>
-				<a href="#st-panel-2">Events</a>
+				<a href="#st-panel-2"> <%=text1%> </a>
 				<input type="radio" name="radio-set" id="st-control-3"/>
-				<a href="#st-panel-3">Results</a>
+				<a href="#st-panel-3"><%=text2%></a>
 				<input type="radio" name="radio-set" id="st-control-4"/>
-				<a href="#st-panel-4">Teams</a>
+				<a href="#st-panel-4"><%=text3%></a>
 				<input type="radio" name="radio-set" id="st-control-5"/>
-				<a href="#st-panel-5">Developers</a>
+				<a href="#st-panel-5"><%=text4%></a>
 				
 				<div class="st-scroll">
 				
