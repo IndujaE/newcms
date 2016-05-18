@@ -1,3 +1,7 @@
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement"%>
 <!DOCTYPE html>
 <html >
   <head>
@@ -119,8 +123,16 @@ mediumseagreen
     </style>
 
     
-        <script src="js/prefixfree.min.js"></script>
-
+    <script src="js/prefixfree.min.js">
+            
+    </script>
+    <script>
+   /*     function delete()
+{
+	//alert("change");
+	f1.submit();
+}*/
+        </script>
     
   </head>
 
@@ -132,16 +144,38 @@ mediumseagreen
 			<div>Delete<span>Event</span></div>
 		</div>
 		<br>
-		<div class="login"><br><br><br>
-            <form name="f1"action="group_evt.html">
-                <input type="submit" value="Group Events"></form>
-            <form name="f2" action="soloevt.html">
-                <input type="submit" value="Solo Events"></form>
+                <div class="login"><br><br><br>
+                <form name="f1" action="deletor.jsp">
+                     <table>
+                <%
+                    PreparedStatement ps = null;
 
+ String getd=null;
+Connection con=DriverManager.getConnection("jdbc:derby://localhost:1527/VAJRA", "superuser", "superuser");
+ ps=con.prepareStatement("SELECT * FROM eventadd ");
             
-                
-		</div>
-      
+      //preparedStmt.executeUpdate();
+             ResultSet rs1=ps.executeQuery();
+             while(rs1.next())
+             {
+             
+             getd= rs1.getString(1).toString();
+             %>
+             
+            
+                 <tr>
+                 <td><%=getd%></td>
+                 <td><input type="radio"  name="dlt" value=<%=getd%> ></td>
+                 </tr>
+             
+             <%
+            
+         }
+                    %>
+                    <input type="submit" value="delete">
+      </table>
+             </form>
+                </div>
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
     
