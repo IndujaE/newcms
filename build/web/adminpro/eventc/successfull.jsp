@@ -1,3 +1,4 @@
+<%@page import="java.io.FileOutputStream"%>
 <%@page import="java.lang.String"%>
 <%@page import="java.sql.*"%>
 <%
@@ -36,6 +37,12 @@ p3= request.getParameter("p3");
         if(i!=0)
         {
             System.out.println("data inserted");
+            FileOutputStream fout=new FileOutputStream("C:\\Users\\radar\\Desktop\\finalproj\\newcms\\web\\events\\"+event_name+".txt");  
+     String s=event_name;  
+     byte b[]=s.getBytes();//converting string into byte array  
+     fout.write(b);  
+     fout.close();  
+     out.println("success..."); 
         }
         
         else
