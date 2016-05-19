@@ -275,8 +275,22 @@ function contentimage1()
 			 <link rel="stylesheet" type="text/css" href="css/simple.css" />
 		<![endif]-->
     </head>
+    
+    
+    
+    
+    <% 
+          if(session.getAttribute("admin")==null || session.getAttribute("admin") == "" || session.getAttribute("admin") == " " ) 
+          { 
+              response.sendRedirect("caught.jsp"); 
+          } 
+          else 
+          { 
+               
+   %> 
+
     <body>
-        <div class="container">
+        <div class="container"> 
 		
                 <div class="clr"></div>
             </div><!--/ Codrops top bar -->
@@ -346,4 +360,9 @@ function contentimage1()
 			
         </div>
 	</body>
+                       
+<% 
+         } 
+%> 
+
 </html>
