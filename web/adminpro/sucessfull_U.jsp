@@ -5,30 +5,41 @@
 Connection con=DriverManager.getConnection("jdbc:derby://localhost:1527/VAJRA", "superuser", "superuser");
 
 PreparedStatement ps = null;
-String fname;
-String lname;
-String rno;
-String branch;
-String email;
-String phno;
-String I;
-String II;
-String III;
-String IV;
-String V;
-String VI;
-String score;
-
+String fname="trial";
+String lname="trial";
+String rno="trial";
+String branch="trial";
+String email="trial";
+String phno="trial";
+String I=null;
+String II=null;
+String III=null;
+String IV=null;
+String V=null;
+String VI=null;
+String score="0";
+String uname= "trial";
+String pass= "trial";
+uname= request.getParameter("uname");
+pass= request.getParameter("password");
 fname= request.getParameter("fname");
 lname= request.getParameter("lname");
 rno= request.getParameter("rno");
 branch= request.getParameter("branch");
 email= request.getParameter("email");
 phno= request.getParameter("phno");
-
-
-
- String query =("Insert into USER_REG values(?,?,?,?,?,?)");
+String val="0"; int va=0;
+String selectchest = "select MAX(CHEST) from SUPERUSER.USER_REG";
+ ResultSet rs1=ps.executeQuery();
+             while(rs1.next())
+             {
+             
+             va= rs1.getInt(2);
+            
+        //    val=va+""; 
+            
+         }
+ String query =("Insert into USER_REG values(?,?,?,?,?,?,?,?)");
  ps= con.prepareStatement(query);
         ps.setString(1, fname);
         ps.setString(2, lname);
@@ -36,13 +47,22 @@ phno= request.getParameter("phno");
         ps.setString(4, branch);
         ps.setString(5, email);
         ps.setString(6, phno);
+        ps.setInt(7, va);
+        ps.setInt(8, 0);
+        
         
         
              
        /* ps.executeUpdate();*/
         
         int i = ps.executeUpdate();
-        if(i!=0)
+        String query1 =("Insert into users values(?,?,?)");
+         ps= con.prepareStatement(query1);
+         ps.setString(1, uname);
+        ps.setString(2, pass);
+        ps.setString(3, "U");
+        int j = ps.executeUpdate();
+        if(i!=0 )
         {
             System.out.println("USER REGISTERED!!!");
         }
