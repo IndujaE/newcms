@@ -5,6 +5,20 @@
 <%@ page import="org.apache.commons.fileupload.servlet.*" %>
 <%@ page import="org.apache.commons.io.output.*" %>
 
+    
+    
+    <% 
+          if(session.getAttribute("admin")==null || session.getAttribute("admin") == "" || session.getAttribute("admin") == " " ) 
+          { 
+              response.sendRedirect("caught.jsp"); 
+          } 
+          else 
+          { 
+               
+     %> 
+    
+    
+    
 <%
    File file ;
    int maxFileSize = 5000 * 1024;
@@ -80,3 +94,6 @@
    }
  //  response.sendRedirect("../index.jsp");
 %>
+    <%
+       }
+       %>

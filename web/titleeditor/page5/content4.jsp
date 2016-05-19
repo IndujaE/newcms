@@ -29,8 +29,23 @@ String font = null;
 <html>
 <head>
 <title>Content Management System</title>
+    
+    <% 
+          if(session.getAttribute("admin")==null || session.getAttribute("admin") == "" || session.getAttribute("admin") == " " ) 
+          { 
+              response.sendRedirect("caught.jsp"); 
+          } 
+          else 
+          { 
+               
+          %> 
+
+<%
+    
+    
   
-<head>
+    </head>
+    
 <body>
 <h1>The content editor of page 5 </h1>
 </br>
@@ -48,4 +63,7 @@ style : <input type="text" name="c3" value = <%=font%> >
     
    
 </body>
+    <%
+       }
+       %>
 </html> 

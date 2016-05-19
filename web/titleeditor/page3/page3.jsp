@@ -1,5 +1,15 @@
 
  <%@page import="java.sql.*"%>
+     
+     <% 
+          if(session.getAttribute("admin")==null || session.getAttribute("admin") == "" || session.getAttribute("admin") == " " ) 
+          { 
+              response.sendRedirect("caught.jsp"); 
+          } 
+          else 
+          { 
+               
+     %> 
 <%
 
 Connection con=DriverManager.getConnection("jdbc:derby://localhost:1527/VAJRA", "superuser", "superuser");
@@ -49,4 +59,7 @@ Style : <input type="text" name="c3" value = <%=font%> >
     
    
 </body>
+    <%
+       }
+       %>
 </html> 

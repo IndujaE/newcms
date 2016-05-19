@@ -1,5 +1,16 @@
 
 <%@page import="java.sql.*"%>
+    
+    
+    <% 
+          if(session.getAttribute("admin")==null || session.getAttribute("admin") == "" || session.getAttribute("admin") == " " ) 
+          { 
+              response.sendRedirect("caught.jsp"); 
+          } 
+          else 
+          { 
+               
+     %> 
 <%
 Connection con = null;
 con = DriverManager.getConnection("jdbc:derby://localhost:1527/VAJRA", "superuser", "superuser");
@@ -42,5 +53,8 @@ String query2 = "update CONTENT set STYLE = ? where PAGE = ?";
 response.sendRedirect("../../index.jsp");
 %>
 
-
+<%
+   }
+   
+   %>
 

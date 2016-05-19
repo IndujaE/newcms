@@ -29,6 +29,21 @@ String font = null;
 <html>
 <head>
     <title>Content Management System</title>
+    
+    
+    
+    
+    
+    
+     <% 
+          if(session.getAttribute("admin")==null || session.getAttribute("admin") == "" || session.getAttribute("admin") == " " ) 
+          { 
+              response.sendRedirect("caught.jsp"); 
+          } 
+          else 
+          { 
+               
+   %> 
     <style>
     
       /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
@@ -188,4 +203,8 @@ body{
     </div>
    
 </body>
+    
+    <%
+       }
+       %>
 </html> 
