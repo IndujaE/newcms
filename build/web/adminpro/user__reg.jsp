@@ -160,7 +160,7 @@ mediumseagreen
   </head>
 
   <body>
-      <form action=" sucessfull_U.jsp">
+      <form action="sucessfull_U.jsp">
     <div class="body"></div>
 		<div class="grad"></div>
 		<div class="header">
@@ -168,6 +168,8 @@ mediumseagreen
 		</div>
 		<br>
 		<div class="login">
+                    <input type="text" placeholder="User Name" name="uname" required><br>
+                    <input type="password" placeholder="Password" name="password" required><br>
                     <input type="text" placeholder="First Name" name="fname" required><br>
                     <input type="text" placeholder="Last Nsme" name="lname" required><br>
                     <input type="text" placeholder="Registration Number" name="rno" required><br>
